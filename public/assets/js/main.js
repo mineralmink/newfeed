@@ -34,6 +34,7 @@ function loadFeed(page, itemCallback) {
         $.when.apply(this, loadUsers).then(function () {
             $.each(resp.data, function (key, val) {
                 var data = $.extend({}, val, { user: userByEids[val.user_eid] })
+                data.created_time = relativeTime(data.created_time);
                 itemCallback(data)
             })
             defer.resolve()
@@ -50,6 +51,32 @@ function renderFeedItem(item) {
         feedContent.append(templates["feed-item-post"](item))
     } else if (item.type === "Link") {
         feedContent.append(templates["feed-item-link"](item))
+    }
+}
+
+function relativeTime(post_time) {
+    var current = new Date();
+    var previous = new Date(post_time);
+    var msPerMinute = 60 * 1000;
+    var msPerHour = msPerMinute * 60;
+    var msPerDay = msPerHour * 24;
+    var msPerMonth = msPerDay * 30;
+    var msPerYear = msPerDay * 365;
+
+    var elapsed = current - previous;
+
+    if (elapsed < msPerMinute) {
+         return Math.round(elapsed/1000) + ' seconds ago';
+    } else if (elapsed < msPerHour) {
+         return Math.round(elapsed/msPerMinute) + ' minutes ago';
+    } else if (elapsed < msPerDay ) {
+         return Math.round(elapsed/msPerHour ) + ' hours ago';
+    } else if (elapsed < msPerMonth) {
+         return 'approximately ' + Math.round(elapsed/msPerDay) + ' days ago';
+    } else if (elapsed < msPerYear) {
+         return 'approximately ' + Math.round(elapsed/msPerMonth) + ' months ago';
+    } else{
+         return 'approximately ' + Math.round(elapsed/msPerYear ) + ' years ago';
     }
 }
 
