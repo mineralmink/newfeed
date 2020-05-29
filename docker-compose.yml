@@ -1,0 +1,14 @@
+version: "2.2"
+services:
+  api:
+    image: wongnai/interview-feed-api:latest
+    ports:
+      - 5555:5555
+  webapp:
+    build: .
+    ports:
+      - 3000:3000
+    command: npm run server
+    healthcheck:
+      test: curl -f http://localhost:3000 || exit 1
+      interval: 5s

@@ -1,0 +1,26 @@
+<div class="box-content bg-white shadow-lg p-4 rounded-lg mt-8">
+	<div class="clearfix">
+		<div class="float-left h-10 w-10 overflow-hidden rounded-full">
+			<img width="100%" height="100%" src="{{user.profile_picture_url}}">
+		</div>
+		<div class="float-left ml-2">
+			<div>
+				<span class="text-blue-800">{{user.name}}</span>
+				<span class="text-gray-700">is at</span>
+				<span class="text-blue-800">{{place}}</span>
+			</div>
+			<div class="text-gray-700 text-sm leading-none">{{created_time}}</div>
+		</div>
+	</div>
+	<p class="mt-2">{{description}}</p>
+	<div class="mt-2">
+		<div class="mr-4 inline-block">
+			<img width="24" class="inline" src="/assets/img/likes.png">
+			<span class="text-sm ml-1">{{statistics.likes}} likes</span>
+		</div>
+		<div class="mr-4 inline-block">
+			<img width="24" class="inline" src="/assets/img/reachs.png">
+			<span class="text-sm ml-1">{{statistics.reaches}} reaches</span>
+		</div>
+	</div>
+</div>
