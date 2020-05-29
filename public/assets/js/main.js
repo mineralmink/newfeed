@@ -82,6 +82,7 @@ function relativeTime(post_time) {
 
 $(document).ready(function () {
     function infScrollLoader() {
+        sessionStorage.clear();
         if (infScrollLoader.loading === true) {
             return
         }
