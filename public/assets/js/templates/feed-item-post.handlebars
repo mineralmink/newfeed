@@ -1,11 +1,11 @@
 <div class="box-content bg-white shadow-lg p-4 rounded-lg mt-8">
 	<div class="clearfix">
 		<div class="float-left h-10 w-10 overflow-hidden rounded-full">
-			<img width="100%" height="100%" src="{{user.profile_picture_url}}">
+			<a href="/user.html?{{user.eid}}"><img width="100%" height="100%" src="{{user.profile_picture_url}}"></a>
 		</div>
 		<div class="float-left ml-2">
 			<div>
-				<span class="text-blue-800">{{user.name}}</span>
+				<a href="/user.html?{{user.eid}}"><span class="text-blue-800">{{user.name}}</span></a>
 			</div>
 			<div class="text-gray-700 text-sm leading-none">{{created_time}}</div>
 		</div>
