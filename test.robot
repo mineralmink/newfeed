@@ -9,11 +9,25 @@ ${URL}    localhost:3000
 Open Discover
     Open Browser    ${URL}    ${BROWSER}
 		Maximize Browser Window
-    Execute Javascript   window.scrollTo(0,document.body.scrollHeight)
+Open User Profile Page Via Profile Picture
+    Click Image    id=user_profile
+Open User Profile Page Via Username
+    Click Element  id=user_name
+Go Back To Discover Page
+    Click Image    id=back_to_main
 
 Close
   Close Browser
+
 *** Test Cases ***
-Search
+Test Case: Go To UserProfile With Profile Picture And Back
     Open Discover
-    //Close
+    Open User Profile Page Via Profile Picture
+    Go Back To Discover Page
+    Close
+
+Test Case: Go To UserProfile With Username And Back
+    Open Discover
+    Open User Profile Page Via Username
+    Go Back To Discover Page
+    Close

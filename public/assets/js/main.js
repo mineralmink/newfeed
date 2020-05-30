@@ -24,7 +24,9 @@ function loadFeed(page, itemCallback) {
         page = 1
     }
     var defer = $.Deferred()
+
     $.getJSON(apiUrl('/feeds?page=' + page), function (resp) {
+      console.log('page' + page);
         var userByEids = {}
         var loadUsers = $.map(resp.data, function (val) {
             return $.getJSON(apiUrl('/users/' + val.user_eid), function (userResp) {
