@@ -24,6 +24,8 @@ This automated testing created via [Robot Framework](https://robotframework.org/
 `pip install robotframework-seleniumlibrary`
 
 After installing the library, we need to install the specific **browser driver** that we use in tests. The general approach to install a browser driver is downloading a right driver, such as chromedriver for Chrome.
+
+<p>In this test, we use Google Chrome for testing, which can be downloaded from (Chromedriver)[http://chromedriver.chromium.org/downloads]</p>
 <p> Alternatively, you can use a tool called WebdriverManager which can find the latest version or when required, any version of appropriate webdrivers for you and then download and link/copy it into right location. Tool can run on all major operating systems and supports downloading of Chrome, Firefox, Opera & Edge webdrivers.</p>
 
 For example:
@@ -32,3 +34,19 @@ For example:
 pip install webdrivermanager
 webdrivermanager firefox chrome --linkpath /usr/local/bin
  ```
+
+<p>To run this test, please go to the test.robot directory and run this command.</p>
+
+`robot test.robot`
+
+
+#### Jest
+
+[Jest](https://jestjs.io/) is a JavaScript Testing Framework we use in this project for unit testing. It can be installed using [yarn](https://classic.yarnpkg.com/en/package/jest) <br>
+`yarn add --dev jest`
+<br>
+or [npm](https://www.npmjs.com/) <br>
+`npm install --save-dev jest`
+
+To run this test please use the following command.
+`npm test`

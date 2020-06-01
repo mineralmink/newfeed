@@ -20,17 +20,27 @@ Close
   Close Browser
 
 *** Test Cases ***
-Test Case: Discover page can be opened
+Test Case A: Discover page can be opened
     Open Discover
     Close
-    
-Test Case: Go To UserProfile With Profile Picture And Back
+
+Test Case B1: Go To UserProfile With Profile Picture
+    Open Discover
+    Open User Profile Page Via Profile Picture
+    Close
+
+Test Case B2: Go To UserProfile With Profile Picture And Back
     Open Discover
     Open User Profile Page Via Profile Picture
     Go Back To Discover Page
     Close
 
-Test Case: Go To UserProfile With Username And Back
+Test Case C1: Go To UserProfile With Username
+    Open Discover
+    Open User Profile Page Via Username
+    Close
+
+Test Case C2: Go To UserProfile With Username And Back
     Open Discover
     Open User Profile Page Via Username
     Go Back To Discover Page

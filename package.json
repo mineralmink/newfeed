@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
     "express": "^4.17.1",
     "jquery": "^3.5.1"
   },
@@ -17,6 +18,11 @@
     "jest": "^26.0.1"
   },
   "jest": {
-        "setupFiles": ["./setup-jest.js"]
+    "setupFiles": [
+      "./setup-jest.js"
+    ],
+    "modulePaths": [
+      "<rootDir>"
+    ]
   }
 }

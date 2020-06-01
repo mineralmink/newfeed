@@ -1,6 +1,5 @@
 var templates = {}
 
-
 function handlebarsLoadTemplate(templateIds) {
     var loading = $.map(templateIds, function (templateId) {
         var src = '/assets/js/templates/' + templateId + '.handlebars'
@@ -9,7 +8,6 @@ function handlebarsLoadTemplate(templateIds) {
 
         })
     })
-
     return $.when.apply(this, loading)
 }
 
@@ -25,9 +23,7 @@ function loadFeed(page, itemCallback) {
         page = 1
     }
     var defer = $.Deferred()
-
     $.getJSON(apiUrl('/feeds?page=' + page), function (resp) {
-      console.log('page' + page);
         var userByEids = {}
         var loadUsers = $.map(resp.data, function (val) {
             return $.getJSON(apiUrl('/users/' + val.user_eid), function (userResp) {
@@ -67,21 +63,45 @@ function relativeTime(post_time) {
     var msPerYear = msPerDay * 365;
 
     var elapsed = current - previous;
-
-    if (elapsed < msPerMinute) {
+    if(elapsed < 0){
+      return 'This date is not valid'
+    }
+    else if(Math.round(elapsed/1000) == 0){
+      return 'Just now';
+    } else if (elapsed < msPerMinute) {
+      if(Math.round(elapsed/1000) == 1)
+         return Math.round(elapsed/1000) + ' second ago';
+      else
          return Math.round(elapsed/1000) + ' seconds ago';
     } else if (elapsed < msPerHour) {
+        if(Math.round(elapsed/msPerMinute) == 1)
+         return Math.round(elapsed/msPerMinute) + ' minute ago';
+        else
          return Math.round(elapsed/msPerMinute) + ' minutes ago';
     } else if (elapsed < msPerDay ) {
+      if(Math.round(elapsed/msPerHour) == 1)
+         return Math.round(elapsed/msPerHour ) + ' hour ago';
+      else
          return Math.round(elapsed/msPerHour ) + ' hours ago';
     } else if (elapsed < msPerMonth) {
-         return 'approximately ' + Math.round(elapsed/msPerDay) + ' days ago';
+        if (Math.round(elapsed/msPerDay) == 1)
+         return Math.round(elapsed/msPerDay) + ' day ago';
+        else
+         return Math.round(elapsed/msPerDay) + ' days ago';
     } else if (elapsed < msPerYear) {
-         return 'approximately ' + Math.round(elapsed/msPerMonth) + ' months ago';
+        if (Math.round(elapsed/msPerMonth) == 1)
+         return Math.round(elapsed/msPerMonth) + ' month ago';
+        else
+         return Math.round(elapsed/msPerMonth) + ' months ago';
     } else{
-         return 'approximately ' + Math.round(elapsed/msPerYear ) + ' years ago';
+        if (Math.round(elapsed/msPerYear) == 1)
+         return Math.round(elapsed/msPerYear) + ' year ago';
+        else
+         return Math.round(elapsed/msPerYear) + ' years ago';
     }
 }
+
+
 
 $(document).ready(function () {
     function infScrollLoader() {
@@ -112,3 +132,8 @@ $(document).ready(function () {
         infScrollLoader()
     })
 })
+
+module.exports = {
+  relativeTime,
+  apiUrl,
+}
