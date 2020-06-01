@@ -20,6 +20,10 @@ Close
   Close Browser
 
 *** Test Cases ***
+Test Case: Discover page can be opened
+    Open Discover
+    Close
+    
 Test Case: Go To UserProfile With Profile Picture And Back
     Open Discover
     Open User Profile Page Via Profile Picture

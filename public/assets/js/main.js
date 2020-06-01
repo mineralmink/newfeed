@@ -1,5 +1,6 @@
 var templates = {}
 
+
 function handlebarsLoadTemplate(templateIds) {
     var loading = $.map(templateIds, function (templateId) {
         var src = '/assets/js/templates/' + templateId + '.handlebars'

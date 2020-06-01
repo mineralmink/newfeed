@@ -4,11 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "node server.js"
+    "server": "node server.js",
+    "test": "jest --watchAll"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "jquery": "^3.5.1"
+  },
+  "devDependencies": {
+    "jest": "^26.0.1"
+  },
+  "jest": {
+        "setupFiles": ["./setup-jest.js"]
   }
 }
