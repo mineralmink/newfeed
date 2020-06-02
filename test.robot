@@ -9,11 +9,16 @@ ${URL}    localhost:3000
 Open Discover
     Open Browser    ${URL}    ${BROWSER}
 		Maximize Browser Window
+    Wait Until Element Is Visible  id=user_profile
 Open User Profile Page Via Profile Picture
+    Wait Until Element Is Visible  id=user_profile
     Click Image    id=user_profile
 Open User Profile Page Via Username
+    Wait Until Element Is Visible  id=user_name
     Click Element  id=user_name
 Go Back To Discover Page
+    Wait Until Element Is Visible  id=back_to_main
+    Wait Until Element Is Visible  id=user_profile
     Click Image    id=back_to_main
 
 Close

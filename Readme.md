@@ -12,6 +12,7 @@ This automated testing created via [Robot Framework](https://robotframework.org/
 #### Robot Framework
 <p>Before installing Robot framework, please install [pip](https://pypi.org/project/pip/) and [python](https://www.python.org/)</p>
 
+
 <p>If you are familiar with Python and pip, just run the command below. </p>
 
 `pip install robotframework`
@@ -35,7 +36,7 @@ pip install webdrivermanager
 webdrivermanager firefox chrome --linkpath /usr/local/bin
  ```
 
-<p>To run this test, please go to the test.robot directory and run this command.</p>
+<p>To run this test, please go to the project directory (test.robot directory) and run this command.</p>
 
 `robot test.robot`
 
@@ -48,5 +49,6 @@ webdrivermanager firefox chrome --linkpath /usr/local/bin
 or [npm](https://www.npmjs.com/) <br>
 `npm install --save-dev jest`
 
-To run this test please use the following command.
+To run this test please go to project directory use the following command.
+
 `npm test`
