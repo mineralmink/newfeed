@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.1 (Python 3.7.3 on darwin)" generated="20200602 11:51:44.940" rpa="false">
+<robot generator="Robot 3.2.1 (Python 3.7.3 on darwin)" generated="20200608 11:17:05.018" rpa="false">
 <suite id="s1" name="Test" source="/Users/mineralmink/Downloads/wechallenged-qa/test.robot">
 <test id="s1-t1" name="Test Case A: Discover page can be opened">
 <kw name="Open Discover">
@@ -9,30 +9,29 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200602 11:51:48.076" level="INFO">Opening browser 'chrome' to base url 'localhost:3000'.</msg>
-<status status="PASS" starttime="20200602 11:51:48.023" endtime="20200602 11:52:40.620"></status>
+<msg timestamp="20200608 11:17:05.298" level="INFO">Opening browser 'safari' to base url 'localhost:3000'.</msg>
+<status status="PASS" starttime="20200608 11:17:05.298" endtime="20200608 11:17:17.014"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200602 11:52:40.621" endtime="20200602 11:52:41.596"></status>
+<status status="PASS" starttime="20200608 11:17:17.014" endtime="20200608 11:17:17.083"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until the element ``locator`` is visible.</doc>
 <arguments>
 <arg>id=user_profile</arg>
 </arguments>
-<status status="PASS" starttime="20200602 11:52:41.596" endtime="20200602 11:52:44.246"></status>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200608 11:17:22.406" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200608 11:17:22.225" endtime="20200608 11:17:22.406"></status>
 </kw>
-<status status="PASS" starttime="20200602 11:51:48.015" endtime="20200602 11:52:44.248"></status>
+<msg timestamp="20200608 11:17:22.409" level="FAIL">Element 'id=user_profile' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20200608 11:17:17.083" endtime="20200608 11:17:22.410"></status>
 </kw>
-<kw name="Close">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200602 11:52:44.251" endtime="20200602 11:52:44.757"></status>
+<status status="FAIL" starttime="20200608 11:17:05.297" endtime="20200608 11:17:22.411"></status>
 </kw>
-<status status="PASS" starttime="20200602 11:52:44.249" endtime="20200602 11:52:44.758"></status>
-</kw>
-<status status="PASS" starttime="20200602 11:51:47.994" endtime="20200602 11:52:44.759" critical="yes"></status>
+<status status="FAIL" starttime="20200608 11:17:05.296" endtime="20200608 11:17:22.418" critical="yes">Element 'id=user_profile' not visible after 5 seconds.</status>
 </test>
 <test id="s1-t2" name="Test Case B1: Go To UserProfile With Profile Picture">
 <kw name="Open Discover">
@@ -42,48 +41,20 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200602 11:52:44.780" level="INFO">Opening browser 'chrome' to base url 'localhost:3000'.</msg>
-<status status="PASS" starttime="20200602 11:52:44.778" endtime="20200602 11:53:48.089"></status>
+<msg timestamp="20200608 11:17:22.429" level="INFO">Opening browser 'safari' to base url 'localhost:3000'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200608 11:17:23.852" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200608 11:17:23.524" endtime="20200608 11:17:23.852"></status>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200602 11:53:48.090" endtime="20200602 11:53:49.205"></status>
+<msg timestamp="20200608 11:17:23.860" level="FAIL">SessionNotCreatedException: Message: Could not create a session: The Safari instance is already paired with another WebDriver session.
+</msg>
+<status status="FAIL" starttime="20200608 11:17:22.428" endtime="20200608 11:17:23.862"></status>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>id=user_profile</arg>
-</arguments>
-<status status="PASS" starttime="20200602 11:53:49.205" endtime="20200602 11:53:51.022"></status>
+<status status="FAIL" starttime="20200608 11:17:22.426" endtime="20200608 11:17:23.863"></status>
 </kw>
-<status status="PASS" starttime="20200602 11:52:44.777" endtime="20200602 11:53:51.022"></status>
-</kw>
-<kw name="Open User Profile Page Via Profile Picture">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>id=user_profile</arg>
-</arguments>
-<status status="PASS" starttime="20200602 11:53:51.025" endtime="20200602 11:53:51.160"></status>
-</kw>
-<kw name="Click Image" library="SeleniumLibrary">
-<doc>Clicks an image identified by ``locator``.</doc>
-<arguments>
-<arg>id=user_profile</arg>
-</arguments>
-<msg timestamp="20200602 11:53:51.163" level="INFO">Clicking image 'id=user_profile'.</msg>
-<status status="PASS" starttime="20200602 11:53:51.162" endtime="20200602 11:53:54.923"></status>
-</kw>
-<status status="PASS" starttime="20200602 11:53:51.024" endtime="20200602 11:53:54.924"></status>
-</kw>
-<kw name="Close">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200602 11:53:54.925" endtime="20200602 11:53:55.795"></status>
-</kw>
-<status status="PASS" starttime="20200602 11:53:54.924" endtime="20200602 11:53:55.796"></status>
-</kw>
-<status status="PASS" starttime="20200602 11:52:44.775" endtime="20200602 11:53:55.796" critical="yes"></status>
+<status status="FAIL" starttime="20200608 11:17:22.425" endtime="20200608 11:17:23.864" critical="yes">SessionNotCreatedException: Message: Could not create a session: The Safari instance is already paired with another WebDriver session.
+</status>
 </test>
 <test id="s1-t3" name="Test Case B2: Go To UserProfile With Profile Picture And Back">
 <kw name="Open Discover">
@@ -93,73 +64,20 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200602 11:53:55.818" level="INFO">Opening browser 'chrome' to base url 'localhost:3000'.</msg>
-<status status="PASS" starttime="20200602 11:53:55.811" endtime="20200602 11:55:34.582"></status>
+<msg timestamp="20200608 11:17:23.870" level="INFO">Opening browser 'safari' to base url 'localhost:3000'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200608 11:17:25.068" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200608 11:17:24.913" endtime="20200608 11:17:25.069"></status>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200602 11:55:34.586" endtime="20200602 11:55:35.316"></status>
+<msg timestamp="20200608 11:17:25.070" level="FAIL">SessionNotCreatedException: Message: Could not create a session: The Safari instance is already paired with another WebDriver session.
+</msg>
+<status status="FAIL" starttime="20200608 11:17:23.869" endtime="20200608 11:17:25.070"></status>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>id=user_profile</arg>
-</arguments>
-<status status="PASS" starttime="20200602 11:55:35.317" endtime="20200602 11:55:37.834"></status>
+<status status="FAIL" starttime="20200608 11:17:23.867" endtime="20200608 11:17:25.071"></status>
 </kw>
-<status status="PASS" starttime="20200602 11:53:55.804" endtime="20200602 11:55:37.835"></status>
-</kw>
-<kw name="Open User Profile Page Via Profile Picture">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>id=user_profile</arg>
-</arguments>
-<status status="PASS" starttime="20200602 11:55:37.838" endtime="20200602 11:55:37.978"></status>
-</kw>
-<kw name="Click Image" library="SeleniumLibrary">
-<doc>Clicks an image identified by ``locator``.</doc>
-<arguments>
-<arg>id=user_profile</arg>
-</arguments>
-<msg timestamp="20200602 11:55:37.979" level="INFO">Clicking image 'id=user_profile'.</msg>
-<status status="PASS" starttime="20200602 11:55:37.979" endtime="20200602 11:55:40.812"></status>
-</kw>
-<status status="PASS" starttime="20200602 11:55:37.836" endtime="20200602 11:55:40.813"></status>
-</kw>
-<kw name="Go Back To Discover Page">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>id=back_to_main</arg>
-</arguments>
-<status status="PASS" starttime="20200602 11:55:40.817" endtime="20200602 11:55:41.594"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>id=user_profile</arg>
-</arguments>
-<status status="PASS" starttime="20200602 11:55:41.596" endtime="20200602 11:55:44.345"></status>
-</kw>
-<kw name="Click Image" library="SeleniumLibrary">
-<doc>Clicks an image identified by ``locator``.</doc>
-<arguments>
-<arg>id=back_to_main</arg>
-</arguments>
-<msg timestamp="20200602 11:55:44.346" level="INFO">Clicking image 'id=back_to_main'.</msg>
-<status status="PASS" starttime="20200602 11:55:44.345" endtime="20200602 11:55:45.254"></status>
-</kw>
-<status status="PASS" starttime="20200602 11:55:40.815" endtime="20200602 11:55:45.255"></status>
-</kw>
-<kw name="Close">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200602 11:55:45.256" endtime="20200602 11:55:45.782"></status>
-</kw>
-<status status="PASS" starttime="20200602 11:55:45.255" endtime="20200602 11:55:45.783"></status>
-</kw>
-<status status="PASS" starttime="20200602 11:53:55.799" endtime="20200602 11:55:45.785" critical="yes"></status>
+<status status="FAIL" starttime="20200608 11:17:23.865" endtime="20200608 11:17:25.072" critical="yes">SessionNotCreatedException: Message: Could not create a session: The Safari instance is already paired with another WebDriver session.
+</status>
 </test>
 <test id="s1-t4" name="Test Case C1: Go To UserProfile With Username">
 <kw name="Open Discover">
@@ -169,48 +87,20 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200602 11:55:45.793" level="INFO">Opening browser 'chrome' to base url 'localhost:3000'.</msg>
-<status status="PASS" starttime="20200602 11:55:45.791" endtime="20200602 11:57:33.002"></status>
+<msg timestamp="20200608 11:17:25.078" level="INFO">Opening browser 'safari' to base url 'localhost:3000'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200608 11:17:26.249" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-9.png"&gt;&lt;img src="selenium-screenshot-9.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200608 11:17:26.117" endtime="20200608 11:17:26.250"></status>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200602 11:57:33.003" endtime="20200602 11:57:33.546"></status>
+<msg timestamp="20200608 11:17:26.250" level="FAIL">SessionNotCreatedException: Message: Could not create a session: The Safari instance is already paired with another WebDriver session.
+</msg>
+<status status="FAIL" starttime="20200608 11:17:25.077" endtime="20200608 11:17:26.251"></status>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>id=user_profile</arg>
-</arguments>
-<status status="PASS" starttime="20200602 11:57:33.547" endtime="20200602 11:57:37.199"></status>
+<status status="FAIL" starttime="20200608 11:17:25.076" endtime="20200608 11:17:26.251"></status>
 </kw>
-<status status="PASS" starttime="20200602 11:55:45.789" endtime="20200602 11:57:37.200"></status>
-</kw>
-<kw name="Open User Profile Page Via Username">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>id=user_name</arg>
-</arguments>
-<status status="PASS" starttime="20200602 11:57:37.203" endtime="20200602 11:57:37.504"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>id=user_name</arg>
-</arguments>
-<msg timestamp="20200602 11:57:37.506" level="INFO">Clicking element 'id=user_name'.</msg>
-<status status="PASS" starttime="20200602 11:57:37.505" endtime="20200602 11:57:42.644"></status>
-</kw>
-<status status="PASS" starttime="20200602 11:57:37.201" endtime="20200602 11:57:42.646"></status>
-</kw>
-<kw name="Close">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200602 11:57:42.649" endtime="20200602 11:57:43.381"></status>
-</kw>
-<status status="PASS" starttime="20200602 11:57:42.647" endtime="20200602 11:57:43.381"></status>
-</kw>
-<status status="PASS" starttime="20200602 11:55:45.787" endtime="20200602 11:57:43.383" critical="yes"></status>
+<status status="FAIL" starttime="20200608 11:17:25.074" endtime="20200608 11:17:26.251" critical="yes">SessionNotCreatedException: Message: Could not create a session: The Safari instance is already paired with another WebDriver session.
+</status>
 </test>
 <test id="s1-t5" name="Test Case C2: Go To UserProfile With Username And Back">
 <kw name="Open Discover">
@@ -220,85 +110,32 @@
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20200602 11:57:43.397" level="INFO">Opening browser 'chrome' to base url 'localhost:3000'.</msg>
-<status status="PASS" starttime="20200602 11:57:43.396" endtime="20200602 11:59:07.416"></status>
+<msg timestamp="20200608 11:17:26.279" level="INFO">Opening browser 'safari' to base url 'localhost:3000'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200608 11:17:27.477" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-10.png"&gt;&lt;img src="selenium-screenshot-10.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20200608 11:17:27.315" endtime="20200608 11:17:27.477"></status>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200602 11:59:07.417" endtime="20200602 11:59:08.291"></status>
+<msg timestamp="20200608 11:17:27.478" level="FAIL">SessionNotCreatedException: Message: Could not create a session: The Safari instance is already paired with another WebDriver session.
+</msg>
+<status status="FAIL" starttime="20200608 11:17:26.278" endtime="20200608 11:17:27.479"></status>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>id=user_profile</arg>
-</arguments>
-<status status="PASS" starttime="20200602 11:59:08.292" endtime="20200602 11:59:13.215"></status>
+<status status="FAIL" starttime="20200608 11:17:26.254" endtime="20200608 11:17:27.479"></status>
 </kw>
-<status status="PASS" starttime="20200602 11:57:43.395" endtime="20200602 11:59:13.217"></status>
-</kw>
-<kw name="Open User Profile Page Via Username">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>id=user_name</arg>
-</arguments>
-<status status="PASS" starttime="20200602 11:59:13.223" endtime="20200602 11:59:13.429"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>id=user_name</arg>
-</arguments>
-<msg timestamp="20200602 11:59:13.432" level="INFO">Clicking element 'id=user_name'.</msg>
-<status status="PASS" starttime="20200602 11:59:13.430" endtime="20200602 11:59:16.945"></status>
-</kw>
-<status status="PASS" starttime="20200602 11:59:13.219" endtime="20200602 11:59:16.946"></status>
-</kw>
-<kw name="Go Back To Discover Page">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>id=back_to_main</arg>
-</arguments>
-<status status="PASS" starttime="20200602 11:59:16.951" endtime="20200602 11:59:18.283"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until the element ``locator`` is visible.</doc>
-<arguments>
-<arg>id=user_profile</arg>
-</arguments>
-<status status="PASS" starttime="20200602 11:59:18.283" endtime="20200602 11:59:19.266"></status>
-</kw>
-<kw name="Click Image" library="SeleniumLibrary">
-<doc>Clicks an image identified by ``locator``.</doc>
-<arguments>
-<arg>id=back_to_main</arg>
-</arguments>
-<msg timestamp="20200602 11:59:19.269" level="INFO">Clicking image 'id=back_to_main'.</msg>
-<status status="PASS" starttime="20200602 11:59:19.267" endtime="20200602 11:59:20.004"></status>
-</kw>
-<status status="PASS" starttime="20200602 11:59:16.948" endtime="20200602 11:59:20.005"></status>
-</kw>
-<kw name="Close">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200602 11:59:20.007" endtime="20200602 11:59:20.682"></status>
-</kw>
-<status status="PASS" starttime="20200602 11:59:20.005" endtime="20200602 11:59:20.683"></status>
-</kw>
-<status status="PASS" starttime="20200602 11:57:43.388" endtime="20200602 11:59:20.685" critical="yes"></status>
+<status status="FAIL" starttime="20200608 11:17:26.253" endtime="20200608 11:17:27.480" critical="yes">SessionNotCreatedException: Message: Could not create a session: The Safari instance is already paired with another WebDriver session.
+</status>
 </test>
-<status status="PASS" starttime="20200602 11:51:44.971" endtime="20200602 11:59:20.688"></status>
+<status status="FAIL" starttime="20200608 11:17:05.020" endtime="20200608 11:17:27.483"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="5" fail="0">Critical Tests</stat>
-<stat pass="5" fail="0">All Tests</stat>
+<stat pass="0" fail="5">Critical Tests</stat>
+<stat pass="0" fail="5">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="5" fail="0" id="s1" name="Test">Test</stat>
+<stat pass="0" fail="5" id="s1" name="Test">Test</stat>
 </suite>
 </statistics>
 <errors>

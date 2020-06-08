@@ -18,12 +18,37 @@ function apiUrl(path) {
     return 'http://localhost:5555' + path
 }
 
+function loadDiscovery(url) {
+
+  var defer = $.Deferred()
+  $.getJSON(apiUrl('/feeds?page=' + 1), function (resp) {
+      console.log(resp.data);
+      var userByEids = {}
+      var loadUsers = $.map(resp.data, function (val) {
+          return $.getJSON(apiUrl('/users/' + val.user_eid), function (userResp) {
+              userByEids[val.user_eid] = userResp
+          })
+      })
+      $.when.apply(this, loadUsers).then(function () {
+          $.each(resp.data, function (key, val) {
+              var data = $.extend({}, val, { user: userByEids[val.user_eid] })
+              data.created_time = relativeTime(data.created_time);
+              itemCallback(data)
+          })
+          defer.resolve()
+      })
+  })
+  return defer
+}
+
+
 function loadFeed(page, itemCallback) {
     if (!page) {
         page = 1
     }
     var defer = $.Deferred()
     $.getJSON(apiUrl('/feeds?page=' + page), function (resp) {
+        console.log(resp.data);
         var userByEids = {}
         var loadUsers = $.map(resp.data, function (val) {
             return $.getJSON(apiUrl('/users/' + val.user_eid), function (userResp) {
@@ -136,4 +161,6 @@ $(document).ready(function () {
 module.exports = {
   relativeTime,
   apiUrl,
+  loadDiscovery,
+  loadFeed
 }

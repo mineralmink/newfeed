@@ -2,7 +2,7 @@
 Library		SeleniumLibrary
 
 *** Variables ***
-${BROWSER}    chrome
+${BROWSER}    safari
 ${URL}    localhost:3000
 
 *** Keywords ***
