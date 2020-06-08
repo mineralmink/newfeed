@@ -40,10 +40,16 @@ webdrivermanager firefox chrome --linkpath /usr/local/bin
 And to make sure the Develop menu available. Choose Safari > Preferences, and on the Advanced tab, select “Show Develop menu in menu bar.”
 then **Choose Develop > Allow Remote Automation.**
 
+However, both Safari on Desktop (OS X, macOS) and on real iOS devices has known issues with resolving URLs which have the string "localhost". We recommend you try replace "localhost" to your computer ip address. For example, if you want to run "localhost:3000" you could change it to "http://<machine_ip_address>:3000" instead.
+In this project, I used my own ip address, for those who would like to run it on safari-test.robot, please change BROWSER variable according to your ip address.
+
 <p>To run this test, please go to the project directory (test.robot directory) and run this command.</p>
 
-`robot test.robot`
+For Chrome:
+`robot chrome-test.robot`
 
+For Safari:
+`robot safari-test.robot`
 
 #### Jest
 

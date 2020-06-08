@@ -3,7 +3,7 @@ Library		SeleniumLibrary
 
 *** Variables ***
 ${BROWSER}    safari
-${URL}    localhost:3000
+${URL}    http://192.168.1.105:3000
 
 *** Keywords ***
 Open Discover
