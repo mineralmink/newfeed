@@ -10,7 +10,7 @@ This automated testing created via [Robot Framework](https://robotframework.org/
 ### Installation instruction
 
 #### Robot Framework
-<p>Before installing Robot framework, please install [pip](https://pypi.org/project/pip/) and [python](https://www.python.org/)</p>
+Before installing Robot framework, please install [pip](https://pypi.org/project/pip/) and [python](https://www.python.org/)
 
 
 <p>If you are familiar with Python and pip, just run the command below. </p>
